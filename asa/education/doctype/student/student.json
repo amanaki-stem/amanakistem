@@ -266,7 +266,7 @@
    "in_preview": 1,
    "in_standard_filter": 1,
    "label": "Team",
-   "options": "\nRed\nGreen\nYellow\nBlue"
+   "options": "\nRED\nGREEN\nYELLOW\nBLUE"
   },
   {
    "fieldname": "student_group",
@@ -277,8 +277,7 @@
    "in_preview": 1,
    "in_standard_filter": 1,
    "label": "Student Group",
-   "options": "\nJunior\nIntermediate\nSenior",
-   "reqd": 1
+   "options": "\nJunior\nIntermediate\nSenior"
   },
   {
    "fieldname": "column_break_fwsyp",
@@ -296,7 +295,7 @@
  "image_field": "image",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-14 18:52:41.433330",
+ "modified": "2023-04-18 22:12:44.358825",
  "modified_by": "Administrator",
  "module": "Education",
  "name": "Student",

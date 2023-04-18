@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_import": 1,
  "allow_rename": 1,
  "autoname": "format:{school}",
  "creation": "2023-04-12 16:30:28.305914",
@@ -8,25 +9,19 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "school",
-  "default_holiday_list"
+  "school"
  ],
  "fields": [
   {
    "fieldname": "school",
    "fieldtype": "Data",
    "label": "School"
-  },
-  {
-   "fieldname": "default_holiday_list",
-   "fieldtype": "Link",
-   "label": "Default Holiday List",
-   "options": "Holiday List"
   }
  ],
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-17 16:09:44.927112",
+ "modified": "2023-04-18 21:46:40.342799",
  "modified_by": "Administrator",
  "module": "Education",
  "name": "School",

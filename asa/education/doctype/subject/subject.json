@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_import": 1,
  "allow_rename": 1,
  "autoname": "format:{subject}",
  "creation": "2023-04-12 13:10:33.695419",
@@ -16,9 +17,10 @@
    "label": "Subject"
   }
  ],
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-12 13:15:57.063896",
+ "modified": "2023-04-18 21:50:12.403073",
  "modified_by": "Administrator",
  "module": "Education",
  "name": "Subject",
