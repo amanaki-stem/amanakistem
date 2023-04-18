@@ -1,0 +1,48 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-04-14 00:04:46.445101",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "subject_name",
+  "subject_level",
+  "year"
+ ],
+ "fields": [
+  {
+   "fieldname": "subject_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Subject Name",
+   "options": "Subject"
+  },
+  {
+   "fieldname": "subject_level",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Subject Level",
+   "options": "\nJunior\nLevel 1\nLevel 2\nLevel 3"
+  },
+  {
+   "fieldname": "year",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Year",
+   "options": "Academic Year"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-04-14 10:04:55.611781",
+ "modified_by": "Administrator",
+ "module": "Education",
+ "name": "Student Subjects",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

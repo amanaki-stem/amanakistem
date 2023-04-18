@@ -1,0 +1,100 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-04-13 22:42:36.564846",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "date",
+  "academy",
+  "column_break_vf42s",
+  "academic_year",
+  "academic_term",
+  "unmarked_attendance_section",
+  "students_html",
+  "marked_attendance_section",
+  "marked_attendance_html",
+  "status"
+ ],
+ "fields": [
+  {
+   "fieldname": "academic_year",
+   "fieldtype": "Link",
+   "label": "Academic Year",
+   "options": "Academic Year"
+  },
+  {
+   "fieldname": "academic_term",
+   "fieldtype": "Link",
+   "label": "Academic Term",
+   "options": "Academic Term"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "students_html",
+   "fieldtype": "HTML",
+   "label": "Students HTML"
+  },
+  {
+   "fieldname": "column_break_vf42s",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "academy",
+   "fieldtype": "Link",
+   "label": "Academy",
+   "options": "Academy"
+  },
+  {
+   "fieldname": "marked_attendance_section",
+   "fieldtype": "Section Break",
+   "label": "Marked Attendance"
+  },
+  {
+   "fieldname": "marked_attendance_html",
+   "fieldtype": "HTML",
+   "label": "Marked Attendance HTML"
+  },
+  {
+   "fieldname": "unmarked_attendance_section",
+   "fieldtype": "Section Break",
+   "label": "Unmarked Attendance"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Status"
+  }
+ ],
+ "hide_toolbar": 1,
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2023-04-18 17:31:56.500605",
+ "modified_by": "Administrator",
+ "module": "Education",
+ "name": "Student Attendance Tool",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

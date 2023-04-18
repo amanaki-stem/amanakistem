@@ -1,0 +1,48 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-04-12 16:29:06.098281",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "school",
+  "year__form",
+  "school_year"
+ ],
+ "fields": [
+  {
+   "fieldname": "school",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "School",
+   "options": "School"
+  },
+  {
+   "fieldname": "year__form",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Year / Form",
+   "options": "\nYear 1\nYear 2\nYear 3\nYear 4\nYear 5\nYear 6\nYear 7\nYear 8\nYear 9\nYear 10\nYear 11\nYear 12\nYear 13"
+  },
+  {
+   "fieldname": "school_year",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "School year",
+   "options": "\n2023\n2024\n2025\n2026\n2027\n2028\n2029\n2030\n2031\n2032\n2033\n2034\n2035\n2036\n2037\n2038\n2039\n2040"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-04-13 21:55:59.071813",
+ "modified_by": "Administrator",
+ "module": "Education",
+ "name": "Education Details",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

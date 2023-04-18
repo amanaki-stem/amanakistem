@@ -1,0 +1,356 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2023-04-11 16:31:36.677415",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_nrote",
+  "column_break_jd4fg",
+  "first_name",
+  "middle_name",
+  "last_name",
+  "user_id",
+  "column_break_ucpq9",
+  "naming_series",
+  "student_email_id",
+  "student_mobile_number",
+  "joining_date",
+  "image",
+  "section_break_1kpnh",
+  "student_group",
+  "column_break_fwsyp",
+  "status",
+  "personal_details_section",
+  "date_of_birth",
+  "gender",
+  "team",
+  "column_break_pfy3a",
+  "nationality",
+  "dietary_info",
+  "sports",
+  "blood_group",
+  "home_address_section",
+  "address",
+  "medical_information_column",
+  "medical_information",
+  "pincode",
+  "section_break_w3vkk",
+  "guardian",
+  "school_subjects_tab",
+  "school_subjects",
+  "education_detail_section",
+  "school",
+  "exit_section",
+  "date_of_leaving",
+  "column_break_pr4lk",
+  "reason_for_leaving",
+  "section_break_u3hsi",
+  "title",
+  "student_name"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_1kpnh",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "first_name",
+   "fieldtype": "Data",
+   "label": "First Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "middle_name",
+   "fieldtype": "Data",
+   "label": "Middle Name"
+  },
+  {
+   "fieldname": "last_name",
+   "fieldtype": "Data",
+   "label": "Last Name"
+  },
+  {
+   "fieldname": "user_id",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "User ID",
+   "options": "User"
+  },
+  {
+   "fieldname": "column_break_ucpq9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "no_copy": 1,
+   "options": "ASA-.YYYY.-",
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "student_email_id",
+   "fieldtype": "Data",
+   "label": "Student Email Address"
+  },
+  {
+   "fieldname": "student_mobile_number",
+   "fieldtype": "Data",
+   "label": "Student Mobile Number"
+  },
+  {
+   "fieldname": "joining_date",
+   "fieldtype": "Date",
+   "label": "Joining Date"
+  },
+  {
+   "fieldname": "image",
+   "fieldtype": "Attach Image",
+   "hidden": 1,
+   "label": "Image"
+  },
+  {
+   "fieldname": "personal_details_section",
+   "fieldtype": "Tab Break",
+   "label": "Personal Details"
+  },
+  {
+   "fieldname": "date_of_birth",
+   "fieldtype": "Date",
+   "label": "Date of Birth"
+  },
+  {
+   "fieldname": "blood_group",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Blood Group",
+   "options": "\nA+\nA-\nB+\nB-\nO+\nO-\nAB+\nAB-"
+  },
+  {
+   "fieldname": "column_break_pfy3a",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "gender",
+   "fieldtype": "Link",
+   "label": "Gender",
+   "options": "Gender"
+  },
+  {
+   "fieldname": "nationality",
+   "fieldtype": "Data",
+   "label": "Nationality"
+  },
+  {
+   "fieldname": "home_address_section",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Small Text",
+   "label": "Home Address"
+  },
+  {
+   "fieldname": "pincode",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Pincode"
+  },
+  {
+   "fieldname": "section_break_w3vkk",
+   "fieldtype": "Tab Break",
+   "label": "Guardian Details"
+  },
+  {
+   "fieldname": "guardian",
+   "fieldtype": "Table",
+   "label": "Guardian",
+   "options": "Student Guardian"
+  },
+  {
+   "fieldname": "column_break_jd4fg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "exit_section",
+   "fieldtype": "Tab Break",
+   "label": "Exit"
+  },
+  {
+   "fieldname": "date_of_leaving",
+   "fieldtype": "Date",
+   "label": "Date of Leaving"
+  },
+  {
+   "fieldname": "column_break_pr4lk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "reason_for_leaving",
+   "fieldtype": "Data",
+   "label": "Reason For Leaving"
+  },
+  {
+   "fieldname": "section_break_u3hsi",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Title"
+  },
+  {
+   "fieldname": "school",
+   "fieldtype": "Table",
+   "label": "School",
+   "options": "Education Details"
+  },
+  {
+   "fieldname": "education_detail_section",
+   "fieldtype": "Tab Break",
+   "label": "Education Detail"
+  },
+  {
+   "fieldname": "section_break_nrote",
+   "fieldtype": "Tab Break",
+   "label": "Student Profile"
+  },
+  {
+   "fieldname": "student_name",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Student Name"
+  },
+  {
+   "fieldname": "school_subjects",
+   "fieldtype": "Table",
+   "label": "Subjects",
+   "options": "Student Subjects"
+  },
+  {
+   "fieldname": "school_subjects_tab",
+   "fieldtype": "Tab Break",
+   "label": "School Subjects"
+  },
+  {
+   "fieldname": "medical_information_column",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "medical_information",
+   "fieldtype": "Small Text",
+   "label": "Medical Information"
+  },
+  {
+   "fieldname": "dietary_info",
+   "fieldtype": "Data",
+   "label": "Dietary Info"
+  },
+  {
+   "fieldname": "sports",
+   "fieldtype": "Data",
+   "label": "Sports"
+  },
+  {
+   "fieldname": "team",
+   "fieldtype": "Select",
+   "in_filter": 1,
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Team",
+   "options": "\nRed\nGreen\nYellow\nBlue"
+  },
+  {
+   "fieldname": "student_group",
+   "fieldtype": "Select",
+   "in_filter": 1,
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Student Group",
+   "options": "\nJunior\nIntermediate\nSenior",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_fwsyp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Student Status",
+   "options": "\nActive\nSuspended\nExit",
+   "reqd": 1
+  }
+ ],
+ "image_field": "image",
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-04-14 18:52:41.433330",
+ "modified_by": "Administrator",
+ "module": "Education",
+ "name": "Student",
+ "name_case": "Title Case",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Tutor",
+   "share": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "import": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Academic Admin",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Student",
+   "share": 1
+  }
+ ],
+ "show_name_in_global_search": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "title"
+}

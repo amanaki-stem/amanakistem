@@ -1,0 +1,41 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-04-12 13:03:04.480276",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "subject_name",
+  "subject_level"
+ ],
+ "fields": [
+  {
+   "fieldname": "subject_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Subject Name",
+   "options": "Subject"
+  },
+  {
+   "fieldname": "subject_level",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Subject Level",
+   "options": "\nJunior\nLevel 1\nLevel 2\nLevel 3"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-04-12 13:17:37.269560",
+ "modified_by": "Administrator",
+ "module": "Education",
+ "name": "Tutoring Subjects",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

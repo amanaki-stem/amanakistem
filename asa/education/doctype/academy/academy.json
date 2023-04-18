@@ -1,0 +1,54 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{academy}",
+ "creation": "2023-04-18 10:11:03.359520",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "academy",
+  "default_holiday_list"
+ ],
+ "fields": [
+  {
+   "fieldname": "academy",
+   "fieldtype": "Data",
+   "label": "Academy"
+  },
+  {
+   "fieldname": "default_holiday_list",
+   "fieldtype": "Link",
+   "label": "Default Holiday List",
+   "options": "Holiday List"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-04-18 10:11:03.359520",
+ "modified_by": "Administrator",
+ "module": "Education",
+ "name": "Academy",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "academy"
+}
