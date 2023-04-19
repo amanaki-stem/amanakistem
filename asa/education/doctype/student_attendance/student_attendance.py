@@ -12,8 +12,8 @@ from asa.education.doctype.holiday_list.holiday_list import is_holiday
 
 class StudentAttendance(Document):
 	def validate(self):
-		self.validate_mandatory()
-		self.validate_date()
+#		self.validate_mandatory()
+#		self.validate_date()
 #		self.set_date()
 #		self.set_student_group()
 		self.validate_student()
@@ -26,14 +26,14 @@ class StudentAttendance(Document):
 #				"Course Schedule", self.course_schedule, "schedule_date"
 #			)
 
-	def validate_mandatory(self):
-		if not (self.student_group):
-			frappe.throw(
-				_("{0} is mandatory").format(
-					frappe.bold("Student Group")
-				),
-				title=_("Mandatory Fields"),
-			)
+#	def validate_mandatory(self):
+#		if not (self.student_group):
+#			frappe.throw(
+#				_("{0} is mandatory").format(
+#					frappe.bold("Student Group")
+#				),
+#				title=_("Mandatory Fields"),
+#			)
 
 	def validate_date(self):
 		if not self.leave_application and getdate(self.date) > getdate():

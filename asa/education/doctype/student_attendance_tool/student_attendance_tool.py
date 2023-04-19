@@ -5,6 +5,7 @@ import datetime
 import json
 
 import frappe
+from frappe import msgprint, _
 from frappe.model.document import Document
 from frappe.utils import getdate
 
@@ -13,27 +14,28 @@ class StudentAttendanceTool(Document):
 
 
 @frappe.whitelist()
-def get_students(
-	date: str | datetime.date, academic_year: str | datetime.date, academic_term: str | datetime.date, academy: str = None
-) -> dict[str, list]:
-	filters = {"status": "Active", "date_of_joining": ["<=", date]}
+def get_students(date: str | datetime.date, student_group: str = None) -> dict[str, list]:
+	
+	filters = {"status": "Active", "student_group": "student_group", "joining_date": ["<=", date]}
 
-	for field, value in {"academic_year": academic_year, "academic_term": academic_term, "academy": academy}.items():
+	for field, value in {"student_group": student_group}.items():
 		if value:
 			filters[field] = value
 
 	student_list = frappe.get_list(
-		"Student", fields=["student", "student_name"], filters=filters, order_by="student_name"
+		"Student", fields=["name", "student_name"], filters=filters, order_by="student_name"
 	)
+
 	attendance_list = frappe.get_list(
 		"Student Attendance",
-		fields=["student", "student_name", "status"],
+		fields=["name", "student", "student_name", "status"],
 		filters={
 			"date": date,
 			"docstatus": 1,
 		},
 		order_by="student_name",
 	)
+#	frappe.throw(_("UNMARKED {0}.").format(attendance_list))
 
 	unmarked_attendance = _get_unmarked_attendance(student_list, attendance_list)
 
@@ -41,9 +43,9 @@ def get_students(
 
 
 def _get_unmarked_attendance(student_list: list[dict], attendance_list: list[dict]) -> list[dict]:
-	marked_students = [entry.student for entry in attendance_list]
+	marked_students = [entry.name for entry in attendance_list]
 	unmarked_attendance = []
-
+#	frappe.throw(_("UNMARKED {0}.").format(student_list))
 	for entry in student_list:
 		if entry.student not in marked_students:
 			unmarked_attendance.append(entry)
@@ -57,7 +59,7 @@ def mark_student_attendance(
 	status: str,
 	date: str | datetime.date,
 	leave_type: str = None,
-	academy: str = None,
+	student_group: str = None,
 	late_entry: str = None,
 	early_exit: str = None,
 ) -> None:
@@ -66,6 +68,7 @@ def mark_student_attendance(
 
 	for student in student_list:
 		leave_type = None
+
 		if status == "On Leave" and leave_type:
 			leave_type = leave_type
 
@@ -78,7 +81,6 @@ def mark_student_attendance(
 				leave_type=leave_type,
 				late_entry=late_entry,
 				early_exit=early_exit,
-				shift=shift,
 			)
 		)
 		attendance.insert()

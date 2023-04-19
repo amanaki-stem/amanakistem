@@ -8,33 +8,42 @@
  "engine": "InnoDB",
  "field_order": [
   "date",
-  "academy",
-  "column_break_vf42s",
   "academic_year",
   "academic_term",
+  "column_break_vf42s",
+  "student_group",
+  "column_break_o2j9w",
+  "status",
   "unmarked_attendance_section",
   "students_html",
   "marked_attendance_section",
   "marked_attendance_html",
-  "status"
+  "section_break_ackd",
+  "attendance_details_section",
+  "column_break_zs5ol",
+  "late_entry",
+  "early_exit"
  ],
  "fields": [
   {
    "fieldname": "academic_year",
    "fieldtype": "Link",
+   "hidden": 1,
    "label": "Academic Year",
    "options": "Academic Year"
   },
   {
    "fieldname": "academic_term",
    "fieldtype": "Link",
+   "hidden": 1,
    "label": "Academic Term",
    "options": "Academic Term"
   },
   {
    "fieldname": "date",
    "fieldtype": "Date",
-   "label": "Date"
+   "label": "Date",
+   "read_only": 1
   },
   {
    "fieldname": "students_html",
@@ -46,12 +55,7 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "academy",
-   "fieldtype": "Link",
-   "label": "Academy",
-   "options": "Academy"
-  },
-  {
+   "depends_on": "date",
    "fieldname": "marked_attendance_section",
    "fieldtype": "Section Break",
    "label": "Marked Attendance"
@@ -64,20 +68,63 @@
   {
    "fieldname": "unmarked_attendance_section",
    "fieldtype": "Section Break",
-   "label": "Unmarked Attendance"
+   "label": "Select Employees"
   },
   {
    "fieldname": "status",
-   "fieldtype": "Data",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "\nPresent\nSick\nAbsent\nHalf Day"
+  },
+  {
+   "collapsible": 1,
+   "description": "Set filters to fetch employees",
+   "fieldname": "section_break_ackd",
+   "fieldtype": "Section Break",
+   "label": "Filters"
+  },
+  {
+   "depends_on": "date",
+   "description": "Set attendance details for the employees select above",
+   "fieldname": "attendance_details_section",
+   "fieldtype": "Section Break",
+   "hide_border": 1,
+   "label": "Set Attendance Details"
+  },
+  {
+   "fieldname": "column_break_zs5ol",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "late_entry",
+   "fieldtype": "Check",
    "hidden": 1,
-   "label": "Status"
+   "label": "Late Entry"
+  },
+  {
+   "default": "0",
+   "fieldname": "early_exit",
+   "fieldtype": "Check",
+   "hidden": 1,
+   "label": "Early Exit"
+  },
+  {
+   "fieldname": "student_group",
+   "fieldtype": "Link",
+   "label": "Student Group",
+   "options": "Student Group"
+  },
+  {
+   "fieldname": "column_break_o2j9w",
+   "fieldtype": "Column Break"
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2023-04-18 17:31:56.500605",
+ "modified": "2023-04-19 14:23:08.106647",
  "modified_by": "Administrator",
  "module": "Education",
  "name": "Student Attendance Tool",

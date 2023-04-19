@@ -10,7 +10,7 @@ frappe.ui.form.on('Student Attendance Tool', {
 
 	onload(frm) {
 		frm.set_value("date", frappe.datetime.get_today());
-//		frm.set_value("academy", frappe.datetime.get_today());
+	
 	},
 
 	date(frm) {
@@ -18,15 +18,15 @@ frappe.ui.form.on('Student Attendance Tool', {
 	},
 
 	academic_year(frm) {
-		frm.trigger("load_employees");
+		frm.trigger("load_students");
 	},
 
 	academic_term(frm) {
-		frm.trigger("load_employees");
+		frm.trigger("load_students");
 	},
 
-	academy(frm) {
-		frm.trigger("load_employees");
+	student_group(frm) {
+		frm.trigger("load_students");
 	},
 
 	status(frm) {
@@ -36,23 +36,22 @@ frappe.ui.form.on('Student Attendance Tool', {
 	reset_attendance_fields(frm) {
 		frm.set_value("status", "");
 //		frm.set_value("shift", "");
-//		frm.set_value("late_entry", 0);
-//		frm.set_value("early_exit", 0);
+		frm.set_value("late_entry", 0);
+		frm.set_value("early_exit", 0);
 	},
 
 	load_students(frm) {
 		if (!frm.doc.date)
 			return;
-
+		
 		frappe.call({
 			method: "asa.education.doctype.student_attendance_tool.student_attendance_tool.get_students",
 			args: {
 				date: frm.doc.date,
-				academic_year: frm.doc.academic_year,
-				academic_term: frm.doc.academic_year,
-				academy: frm.doc.academy
+				student_group: frm.doc.student_group
 			}
 		}).then((r) => {
+			
 			frm.students = r.message["unmarked"];
 
 			if (r.message["unmarked"].length > 0) {
@@ -65,8 +64,9 @@ frappe.ui.form.on('Student Attendance Tool', {
 			}
 
 			if (r.message["marked"].length > 0) {
+				console.log(r.message)
 				unhide_field("marked_attendance_html");
-				frm.events.show_unmarked_students(frm, r.message["marked"]);
+				frm.events.show_marked_students(frm, r.message["marked"]);
 			} else {
 				hide_field("marked_attendance_html");
 			}
@@ -88,8 +88,8 @@ frappe.ui.form.on('Student Attendance Tool', {
 				get_data: () => {
 					return unmarked_students.map((student) => {
 						return {
-							label: `${student.student} : ${student.student_name}`,
-							value: student.student,
+							label: `${student.name} : ${student.student_name}`,
+							value: student.name,
 							checked: 0,
 						};
 					});
@@ -104,11 +104,11 @@ frappe.ui.form.on('Student Attendance Tool', {
 	show_marked_students(frm, marked_students) {
 		const $wrapper = frm.get_field("marked_attendance_html").$wrapper;
 		const summary_wrapper = $(`<div class="summary_wrapper">`).appendTo($wrapper);
-
+		console.log(marked_students)
 		const data = marked_students.map((entry) => {
 			return [`${entry.student} : ${entry.student_name}`, entry.status];
 		});
-
+		
 		frm.events.render_datatable(frm, data, summary_wrapper);
 	},
 
@@ -138,8 +138,8 @@ frappe.ui.form.on('Student Attendance Tool', {
 	get_columns_for_marked_attendance_table(frm) {
 		return [
 			{
-				name: "student",
-				id: "student",
+				name: "student_name",
+				id: "student_name",
 				content: `${__("Student")}`,
 				editable: false,
 				sortable: false,
@@ -159,7 +159,7 @@ frappe.ui.form.on('Student Attendance Tool', {
 				align: "left",
 				width: 150,
 				format: (value) => {
-					if (value == "Present" || value == "Work From Home")
+					if (value == "Present")
 						return `<span style="color:green">${__(value)}</span>`;
 					else if (value == "Absent")
 						return `<span style="color:red">${__(value)}</span>`;

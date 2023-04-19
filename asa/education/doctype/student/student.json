@@ -10,21 +10,19 @@
  "engine": "InnoDB",
  "field_order": [
   "section_break_nrote",
-  "column_break_jd4fg",
   "first_name",
   "middle_name",
   "last_name",
   "user_id",
+  "student_group",
   "column_break_ucpq9",
   "naming_series",
+  "academy",
   "student_email_id",
   "student_mobile_number",
   "joining_date",
-  "image",
-  "section_break_1kpnh",
-  "student_group",
-  "column_break_fwsyp",
   "status",
+  "image",
   "personal_details_section",
   "date_of_birth",
   "gender",
@@ -54,10 +52,6 @@
   "student_name"
  ],
  "fields": [
-  {
-   "fieldname": "section_break_1kpnh",
-   "fieldtype": "Section Break"
-  },
   {
    "fieldname": "first_name",
    "fieldtype": "Data",
@@ -173,10 +167,6 @@
    "options": "Student Guardian"
   },
   {
-   "fieldname": "column_break_jd4fg",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "exit_section",
    "fieldtype": "Tab Break",
    "label": "Exit"
@@ -270,18 +260,14 @@
   },
   {
    "fieldname": "student_group",
-   "fieldtype": "Select",
+   "fieldtype": "Link",
    "in_filter": 1,
    "in_global_search": 1,
    "in_list_view": 1,
    "in_preview": 1,
    "in_standard_filter": 1,
    "label": "Student Group",
-   "options": "\nJunior\nIntermediate\nSenior"
-  },
-  {
-   "fieldname": "column_break_fwsyp",
-   "fieldtype": "Column Break"
+   "options": "Student Group"
   },
   {
    "fieldname": "status",
@@ -290,12 +276,20 @@
    "label": "Student Status",
    "options": "\nActive\nSuspended\nExit",
    "reqd": 1
+  },
+  {
+   "default": "Amanaki STEM Academy",
+   "fieldname": "academy",
+   "fieldtype": "Link",
+   "label": "Academy",
+   "options": "Academy",
+   "read_only": 1
   }
  ],
  "image_field": "image",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-18 22:12:44.358825",
+ "modified": "2023-04-19 08:06:30.174149",
  "modified_by": "Administrator",
  "module": "Education",
  "name": "Student",
